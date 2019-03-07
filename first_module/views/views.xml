@@ -1,49 +1,61 @@
 <odoo>
   <data>
-    <!-- explicit list view definition -->
-    <!--
-    <record model="ir.ui.view" id="first_module.list">
-      <field name="name">first_module list</field>
-      <field name="model">first_module.first_module</field>
+    
+    <record model="ir.ui.view" id="tree_view_autos">
+      <field name="name">Vista Principal</field>
+      <field name="model">autos</field>
       <field name="arch" type="xml">
         <tree>
           <field name="name"/>
-          <field name="value"/>
-          <field name="value2"/>
+          <field name="marca"/>
+          <field name="modelo"/>
+          <field name="kilomet"/>
         </tree>
       </field>
     </record>
-    -->
+    
+    <record model="ir.ui.view" id="form_view_autos">
+      <field name="name">Formulario</field>
+      <field name="model">autos</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <div>
+              <field name="picture" widget="image" />
+            </div>
+            <group>
+              <field name="name" />
+              <field name="marca" />
+              <field name="modelo" />
+              <field name="year_fabricacion" />
+              <field name="color" />
+              <field name="kilomet" />
+              <field name="garanty" />
+              <field name="transmision" />
+              <field name="puertas" />
+              <field name="pasajeros" />
+              <field name="litros" />
+              <field name="cilindros" />
+              <field name="combustible" />
+            </group>
+          </sheet>
+        </form>
+      </field>      
+    </record>
+
 
     <!-- actions opening views on models -->
-    <!--
-    <record model="ir.actions.act_window" id="first_module.action_window">
-      <field name="name">first_module window</field>
-      <field name="res_model">first_module.first_module</field>
+    
+    <record model="ir.actions.act_window" id="menu_autos">
+      <field name="name">Autos</field>
+      <field name="res_model">autos</field>
       <field name="view_mode">tree,form</field>
     </record>
-    -->
-
-    <!-- server action to the one above -->
-    <!--
-    <record model="ir.actions.server" id="first_module.action_server">
-      <field name="name">first_module server</field>
-      <field name="model_id" ref="model_first_module_first_module"/>
-      <field name="state">code</field>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "tree,form",
-          "res_model": self._name,
-        }
-      </field>
-    </record>
-    -->
 
     <!-- Top menu item -->
-    <!--
-    <menuitem name="first_module" id="first_module.menu_root"/>
-    -->
+    
+    <menuitem name="Autos" id="autos.menu_root"/>
+    
     <!-- menu categories -->
     <!--
     <menuitem name="Menu 1" id="first_module.menu_1" parent="first_module.menu_root"/>
